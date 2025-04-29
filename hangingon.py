@@ -6,23 +6,27 @@ def menu():
 
 def calculations(numbers):
     avg = sum(numbers)/len(numbers)
-    print("Average: ", avg)
+    
     numbers.sort()
     min = numbers[0]
-    print("Minimum: ", min)
     max = numbers[-1]
-    print("Maximum: ", max)
+ 
     middle = len(numbers)//2
     if len(numbers) % 2 == 1:
         median = numbers[middle]
     else:
         median = ((numbers[middle-1] + numbers[middle]) / 2)
-    print("Median: ", median)
-    return 
+        
+    return avg, min, max, median
+
 
 def main():
     numbers = menu()
-    calculations(numbers)
+    results = calculations(numbers)
+    print("Average: ", results[0])
+    print("Minimum: ", results[1])
+    print("Maximum: ", results[2])
+    print("Median: ", results[3])
 
 if __name__ == "__main__":
     main()
