@@ -3,18 +3,22 @@ def calc_bmi(weight, height):
 
 def classify_bmi(bmi):
     if bmi < 18.5:
-        return "Underweight"
+        print("You are Underweight")
+        return -1
     elif bmi < 25.0:
-        return "Normal weight"
+        print("You are Healthy")
+        return 0
     else:
-        return "Overweight"
+        print("You are Overweight")
+        return 1
 
 def main():
     weight = float(input("Enter your weight in kilograms: "))
     height = float(input("Enter your height in meters: "))
     bmi = calc_bmi(weight,height)
     print("Your BMI: ", bmi)
-    print("You are "+classify_bmi(bmi))
+    classify_bmi(bmi)
+    
 
 
 if __name__ == "__main__":
